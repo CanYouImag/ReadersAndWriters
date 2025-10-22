@@ -1,0 +1,20 @@
+// 提示文件帮助 Visual Studio IDE 解释 Visual C++ 标识符,
+// 如函数和宏的名称。
+// 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
+#define QT_BEGIN_NAMESPACE
+#define QT_BEGIN_NAMESPACE inline namespace QT_NAMESPACE {
+#define QT_BEGIN_NAMESPACE namespace QT_NAMESPACE {
+// 提示文件帮助 Visual Studio IDE 解释 Visual C++ 标识符,
+// 如函数和宏的名称。
+// 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
+#define QT_FOR_EACH_STATIC_TYPE(F) QT_FOR_EACH_STATIC_PRIMITIVE_TYPE(F) QT_FOR_EACH_STATIC_PRIMITIVE_POINTER(F) QT_FOR_EACH_STATIC_CORE_CLASS(F) QT_FOR_EACH_STATIC_CORE_POINTER(F) QT_FOR_EACH_STATIC_CORE_TEMPLATE(F) QT_FOR_EACH_STATIC_GUI_CLASS(F) QT_FOR_EACH_STATIC_WIDGETS_CLASS(F)
+// 提示文件帮助 Visual Studio IDE 解释 Visual C++ 标识符,
+// 如函数和宏的名称。
+// 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
+#define QT_WARNING_DISABLE_FLOAT_COMPARE
+#define QT_WARNING_DISABLE_FLOAT_COMPARE QT_WARNING_DISABLE_CLANG("-Wfloat-equal")
+#define QT_WARNING_DISABLE_FLOAT_COMPARE QT_WARNING_DISABLE_GCC("-Wfloat-equal")
+// 提示文件帮助 Visual Studio IDE 解释 Visual C++ 标识符,
+// 如函数和宏的名称。
+// 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
+#define Q_DECLARE_METATYPE_TEMPLATE_1ARG(SINGLE_ARG_TEMPLATE) QT_BEGIN_NAMESPACE template <typename T> struct QMetaTypeId< SINGLE_ARG_TEMPLATE<T> > { enum { Defined = QMetaTypeId2<T>::Defined }; static int qt_metatype_id() { Q_CONSTINIT static QBasicAtomicInt metatype_id = Q_BASIC_ATOMIC_INITIALIZER(0); if (const int id = metatype_id.loadRelaxed()) return id; const char *tName = QMetaType::fromType<T>().name(); Q_ASSERT(tName); const size_t tNameLen = qstrlen(tName); QByteArray typeName; typeName.reserve(sizeof(#SINGLE_ARG_TEMPLATE) + 1 + tNameLen + 1 + 1); typeName.append(#SINGLE_ARG_TEMPLATE, int(sizeof(#SINGLE_ARG_TEMPLATE)) - 1) .append('<').append(tName, tNameLen); typeName.append('>'); const int newId = qRegisterNormalizedMetaType< SINGLE_ARG_TEMPLATE<T> >(typeName); metatype_id.storeRelease(newId); return newId; } }; QT_END_NAMESPACE
